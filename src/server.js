@@ -2,12 +2,17 @@ const Hapi = require('@hapi/hapi');
 const routes = require('./routes');
 
 const port = 8000;
-const host = 'localhost';
+const developmentHost = 'localhost';
+const productionpHost = '0.0.0.0';
 const externalOrigin = 'http://notesapp-v1.dicodingacademy.com';
+
+// eslint-disable-next-line no-undef
+const getHost = () => process.env.NODE_ENV !== 'production' ? developmentHost : productionpHost;
 
 const init = async () => {
   const server = Hapi.server({
-    port: port, host: host,
+    port: port,
+    host: getHost(),
     routes: {
       cors: {
 
