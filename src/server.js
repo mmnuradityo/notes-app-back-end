@@ -1,7 +1,7 @@
 const Hapi = require('@hapi/hapi');
 const routes = require('./routes');
 
-const port = 8000;
+const port = 5000;
 const developmentHost = 'localhost';
 const productionpHost = '0.0.0.0';
 //const externalOrigin = 'http://notesapp-v1.dicodingacademy.com';
