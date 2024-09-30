@@ -4,7 +4,7 @@ const routes = require('./routes');
 const port = 8000;
 const developmentHost = 'localhost';
 const productionpHost = '0.0.0.0';
-const externalOrigin = 'http://notesapp-v1.dicodingacademy.com';
+//const externalOrigin = 'http://notesapp-v1.dicodingacademy.com';
 
 // eslint-disable-next-line no-undef
 const getHost = () => process.env.NODE_ENV !== 'production' ? developmentHost : productionpHost;
@@ -19,9 +19,10 @@ const init = async () => {
         /**
          * @variable externalOrigin is external address from the webApp to consume datas of the serverApp
          * can change with ('*') to allow all origin to access the serverApp and consume the datas
-         * example: rorigin: ['*'];
+         * example: origin: ['*'];
          */
-        origin: [externalOrigin]
+        // origin: [externalOrigin]
+        origin: ['*'],
       }
     },
   });
